@@ -1,0 +1,100 @@
+1.XML  可扩展的标记语言
+2.为什么有XML?
+	2.1)数据文件内容没有统一标准,每个厂商都不同
+	2.2)W3C组织设计了XML统一的数据文件标准,得到业界广泛认可.
+	2.3)XML具有可扩展性,可以支持任何数据.
+	2.4)XML具有统一的访问API,可以大大简化编程
+	2.5)XML格式复杂,臃肿,有些场合已经使用JSON格式代替
+	
+	
+3.XML基本语法
+	注释,标记,内容,元素,属性,实体,CDATA
+
+
+4.XML用途: 常用于简化数据的存储和共享
+	1)简化数据共享
+	2)简化数据传输
+	3)简化平台变更
+	
+
+
+5.标记  tag(标签)
+   语法: 	<标记名>		开始标记
+		</标记名>	结束标记
+		<标记名/>	自结束标记	等价于  <标记名></标记名>
+   规则:
+	1)标记名区别大小写
+	2)标记名可以任意书写,也就是标记名可以扩展
+	3)可以使用中文编辑名,但是不建议使用	
+	4)XML文件只能有一个唯一的根标记
+	5)标记必须配对使用,自结束标记相当于一对标记
+	6)标记必须合理嵌套,不能交叉嵌套
+	7)标记的嵌套关系可以任意扩展
+	
+6.内容:开始标记和结束标记中间的部分
+
+	可以是文本数据
+	可以是标记
+	可以是标记和文本的混合
+
+7.元素(Elements): 开始标记+内容+结束标记
+	1)根标记和全部内容称为根元素,根元素只有一个
+	2)元素内容中的元素称为子元素
+	3)没有内容的元素称为空元素
+	4)当前元素的上一层元素称为父元素
+	
+8.属性 Attribute
+	1)在元素的开始标记上声明属性
+	2)属性属于元素
+	3)属性的名不能重复
+	4)属性无序
+	5)写法: name="value"  值要用双引号/单引号括起来
+	6)属性的名称和个数可以扩展
+	7)注意:如果有id属性,一般id的值是不同的,并且以字符为开头
+	
+9)实体(Entity)替换
+	理解:实体理解为Java的转义字符.但是XML中没有转义字符 
+		特殊字符需要使用"实体"进行替换
+		<	替换为	&lt;     
+		>	替换为	&gt;
+		&	替换为	&amp;
+(单引号)	'	替换为	&apos;
+		"	替换为	&quot;
+	
+10.CDATA 内部的特殊符号无需进行实体替换
+	格式:<![CDATA[文本内容]]>
+
+	注意:CDATA不能嵌套
+
+
+11.XML文件读取解析  (Dom4j,DOM,SAX,Jdom,XML Stream)   Dom4j(网站:https://dom4j.github.io)使用最便捷                              
+	1)dom4j	读:dom four j   是第三方开源XML API
+	2)利用这个API可以以非常简洁的方式访问XML文件	
+	3)dom4j底层依赖于文件流
+ 使用:
+ 	1)导入Dom4j包  window--preference--maven--user_settings选择包
+ 		检查是否成功:window--show_view--other--Maven_repositiries(双击打开)
+ 					看是否成功导入对应的包
+ 	
+ 总结:
+ 	1)从根元素作为入口
+ 		Element root=doc.getRootElement();
+ 	2)搜索全部子元素(集合存储)
+ 		List<Element> list=root.elements();
+ 	3)获取指定名称的全部子元素
+		List<Element> list=root.elements("car");  ""中是指定的名称
+ 	4)找到元素中第一个指定名字的子元素.一般用在子元素名唯一的时候,当子元素不存在的
+ 	  时候返回null.
+ 		Element n=element.element("color");//获取子元素中的某一个标签,不能带s
+	5)获取元素中的文本
+		String string=element.getText();
+		String string=element.getTextTrim();  去除空白常用!!
+	6)可以直接获取子元素中的文本
+		String text=element.elementTextTrim("子元素名");  返回的是子元素名对应的文本
+		等价于  	String text=element.element("子元素名").getTextTrim();
+	7)获取元素中的属性值
+		String value=element.attributeValue("属性名");
+	
+
+
+

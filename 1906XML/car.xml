@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 注释 ,XML文件注释不能使用Java注释,XML注释不能嵌套-->
+<car>
+	<car ><!-- 第一个子元素 -->
+  		<!-- 开始标签中可以包含属性 ,属性必须用引号(单引号/双引号)-->
+		<color name="1"  id="car_1" lang="cilicili">琥珀色</color>
+		<price >23万8</price>
+		<wheel>&lt;米其林&gt;</wheel>
+	</car>
+	
+	
+	<car ><!-- 第二个子元素 -->
+		<color style="123" name="2">黑色</color>
+		<price>15万6</price>
+		<wheel>东风</wheel>
+	</car>
+	
+	
+	<note>   <!-- 第三个子元素 -->
+		<![CDATA[
+			if(year>10 && year<12){
+				System.Out.Println("该车已经报废!");
+			}
+		]]>
+	</note>
+</car>

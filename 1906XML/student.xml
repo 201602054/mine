@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+	<student>
+			<name id="#001">&lt;张三&gt;</name>
+			<id>201602036</id>
+			<gender>男</gender>
+	</student>
+		
+	
+	<student>
+			<name id="#002">李四</name>
+			<id>201602078</id>
+			<gender>女</gender>
+	</student>
+	
+	
+	<student>
+			<name id="#003">杨成</name>
+			<id>201502049</id>
+			<gender>男</gender>
+	</student>
+	
+	
+	<note>
+		<![CDATA[
+			这里写文本数据
+		]]>
+	</note>
+</students>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+	<book id="b001" lang="zh">
+		<name>
+			&lt;檀香刑&gt;
+		</name>
+		<author>莫言</author>
+		<date></date>
+	</book>
+	
+	
+	<note>震撼，吓死人</note>
+	
+	
+	<book lang="zh" id="b002">
+		<name>乡关何处</name>
+		<author>土家野夫</author>
+	</book>
+	
+	
+    <book>
+		<name>&amp;空姐同居的日子</name>
+		<author>三十</author>
+	</book>	 
+	
+	
+	<note><![CDATA[ 
+		if(age>30 && age<35){
+			System.out.println("你该结婚了");
+		}
+	]]></note>
+</books>

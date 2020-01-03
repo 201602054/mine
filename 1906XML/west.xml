@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<west>
+<!-- 这里是是注释 -->
+	<person id="#1" name="sun">
+		<name gender="雄性">&amp;孙悟空</name>
+		<nickname>孙行者</nickname>
+	</person>
+	<person id="#2" name="zhu">
+		<name gender="公">猪八戒</name>
+		<nickname>&lt;天蓬元帅&gt;</nickname>
+	</person>
+	<person name="sha" id="#3">
+		<name gender="公">沙僧</name>
+		<nickname>&apos;沙和尚&apos;</nickname>
+	</person>
+	<person name="tang" id="#4">
+		<name gender="男">唐僧</name>
+		<nickname>&quot;唐三藏&quot;</nickname>
+	</person>
+	
+	<note>
+		<![CDATA[
+				if(a==b&&c==d){}
+				...
+		]]>
+	</note>
+</west>
