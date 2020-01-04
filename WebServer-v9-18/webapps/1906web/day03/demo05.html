@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>练习</title>
+<style type="text/css">
+body{
+	font: 12px "simhei", Arial, Helvetica, sans-serif;
+}
+
+body>div {
+	width: 198px;
+	height: 233px;
+	margin-right: 5.19px;
+	background: #E8E8E8;
+	box-sizing: border-box;
+	/*在最外层div设置居中,子元素会继承此样式   */
+	text-align: center;
+	
+}
+.p1{
+	margin-bottom: 6px;
+	margin-top: 0px;
+    font-size: 12px;
+    font-weight: lighter;
+    color: #000;
+}
+.p2{
+	color: #0AA1ED;
+	font-size: 20px;
+	margin-top: 2px;
+	margin-bottom: 8px;
+}
+a{
+	text-decoration: none;
+	
+	width: 100px;
+	height: 24px;
+	line-height: 24px;
+	font-size: 15px;
+	/* 会自动继承上级元素的居中设置 
+	text-align: center; 
+	*/
+	border: 1px solid white;
+	border-radius: 10px;
+	background-color: #0AA1ED; 
+	color: #fff;
+	
+	/*a标签是行内元素,不能改宽高,更改显示方式 
+	使用block后是块级元素,不能继承上级元素的居中
+	效果,但可以自行设置margin:0 auto;居中.
+	或者使用display:inline-block(行内块);直接继承上级
+	元素的居中效果 
+	
+	块级元素只能通过外边距的方式居中 
+	  */
+	display: inline-block;
+	/* margin: 0 auto; */
+	
+}
+</style>
+</head>
+<body>
+	<div>
+		<img src="http://doc.tedu.cn/tstore_v1/images/itemCat/study_computer_img3.png">
+		<p class="p1">
+			戴尔(DELL)XPS13-9360-R1609 13.3英寸微边框笔记本电脑
+		</p>
+		<p class="p2">￥4600.00</p>
+		<a href="">查看详情</a>
+	</div>
+</body>
+</html>

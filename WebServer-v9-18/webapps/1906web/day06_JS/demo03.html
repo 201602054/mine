@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>隐藏部分列表</title>
+</head>
+<body>
+	<ul>
+			<!--this指的是当前的li  -->
+		<li onclick="fun(this)">亲戚
+			<ul class="c1">
+				<li>习大大</li>
+				<li>奥巴马</li>
+				<li>雷布斯</li>
+			</ul>
+		</li>	
+		<li onclick="fun(this)">同事
+			<ul class="c1">
+				<li>马云</li>
+				<li>马后炮</li>
+				<li>马上成亲</li>
+			</ul>
+		</li>	
+		<li onclick="fun(this)">小三们
+			<ul class="c1">
+				<li>貂蝉</li>
+				<li>妲己</li>
+				<li>王昭君</li>
+			</ul>
+		</li>	
+	</ul>
+	
+	<script type="text/javascript">
+		//通过class值得到所有的二层ul
+		var arr=document.getElementsByClassName("c1");
+		for(var i=0;i<arr.length;i++){
+			arr[i].style.display="none";//隐藏二层的ul 
+		}
+		function fun(li){//第一层ul下的li标签 
+			/*通过点击的li获取里面的ul
+				通过标签名获取的ul返回的是数组,此处li中只有一个ul 
+			*/
+			var ul=li.getElementsByTagName("ul")[0];//得到分层的ul 
+			
+			//可以改为三目运算一行搞定--->高大上 
+/* 			if(ul.style.display=="none"){
+				//点击时把隐藏的x显示出来
+				ul.style.display="block";
+			}else{
+				ul.style.display="none";
+			} */
+			ul.style.display=(ul.style.display=="none")?"block":"none";
+			
+			//遍历所有第二层ul
+			for(var i=0;i<arr.length;i++){
+				//判断是不是点击的另外两个
+				if(arr[i]!=ul){//如果点击的不是当前第一层ul下的li标签,不会显示.
+					 		  //即:每次只能显示一个二层ul的li标签  	
+					arr[i].style.display="none";
+				}
+			}
+		}
+	</script>
+</body>
+</html>

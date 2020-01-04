@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>轮播图</title>
+<style type="text/css">
+	div,img{
+		width: 200px;
+		height: 150px;
+	}
+</style>
+</head>
+<body>
+	<img alt="" src="../imgs/a.jpg">
+	<img alt="" src="../imgs/b.jpg">
+	<img alt="" src="../imgs/c.jpg">
+	
+	<script type="text/javascript">
+	/*
+		轮播图制作思路:
+			1)显示第一张图片,其他隐藏
+			2)借助计时器切换显示的图片 
+	*/
+		var arr=document.getElementsByTagName("img");//获取指定标签名的元素们
+		for(var i=0;i<arr.length;i++){
+			if(i!=0){
+				arr[i].style.display="none";//将不是第一张的图片隐藏 				
+			}
+		}
+		
+		var x=0;
+		//开启定时器   
+		//如果需要使用往返数值,需要对一个不断自增的数值取余数
+		setInterval(function(){
+			x++;
+			//得到显示下标 
+			var index=x%3;
+			//遍历
+			for(var i=0;i<arr.length;i++){
+				/*if(i==index){
+					arr[i].style.display="inline-block";
+				}else{
+					arr[i].style.display="none";
+				}*/
+				
+				//任何if...else...语句都能转为三木运算 
+				
+				//三目运算    即:
+				arr[i].style.display=(i==index?"inline-block":"none");
+			}
+		},1000);
+	</script>
+</body>
+</html>

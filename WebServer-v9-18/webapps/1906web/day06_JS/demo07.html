@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件绑定</title>
+</head>
+<body>
+	<input type="button" value="按钮1" onclick="fn1()">
+	<input type="button" value="按钮2" id="btn">
+	
+	<script type="text/javascript">
+		function fn1(){
+			alert("fn1触发!")
+		}
+		
+		//动态绑定事件 
+		btn.onclick=function(){
+			alert("动态绑定成功!");			
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>定位方式之相对定位</title>
+<!--
+定位:	4种+1(浮动定位)
+	1)文档流定位(静态定位)position:static
+		特点:行内元素从左到右排列,块级元素从上到下排列
+		如何控制元素位置:margin
+	2)相对定位  position:relative;
+		特点:元素不脱离文档流(即:元素位置改变后仍然占着该原来的位置),
+			通过left/right/top/bottom使其从当前位置偏移
+	3)绝对定位   position: absolute;
+		特点:元素脱离文档流(即:不占着原来的位置)
+			通过left/right/top/bottom使其相对于窗口(默认)或者某一个上级元素
+			(需要在该上级元素设置相对定位position:relative;)做位置偏移
+	4)固定定位  position:fixed;
+		特点:元素固定在页面(窗口)中某个位置.元素从文档流中完全脱离,不占用页面空间
+			通过left/right/top/bottom使元素相对窗口定位
+  -->
+
+<style type="text/css">
+div {
+	width: 100px;
+	height: 100px;
+	border: 1px solid red;
+}
+
+div:HOVER {/* 鼠标悬停发生的变化  */
+	position:relative;/*相对定位   */
+	/*从元素初始位置做偏移   */
+	top: 20px;
+	left: 20px;
+}
+</style>
+</head>
+<body>
+	<div>div1</div>
+	<div>div2</div>
+</body>
+</html>

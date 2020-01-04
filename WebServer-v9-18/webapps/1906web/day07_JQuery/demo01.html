@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>引入jQuery,按钮动态绑定,获取文本框的值</title>
+</head>
+<body>
+
+<input id="i1" type="text">
+<input id="b1" type="button" value="按钮1">
+<input type="text" id="i2">
+<input id="b2" type="button" value="按钮2">
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	//js中页面加载完成事件 : onload=function(){};
+	//jq中的页面加载完成事件 
+	$(function(){
+		//通过id选择器得到按钮1,给按钮添加事件
+		$("#b1").click(function(){//jQuery中的事件都要去除"on",比如:onclick事件 
+			alert($("#i1").val());//jq中获取文本框的内容 
+		});
+		
+		$("#b2").click(function(){
+			alert($("#i2").val());
+		});
+	});
+</script>
+</body>
+</html>

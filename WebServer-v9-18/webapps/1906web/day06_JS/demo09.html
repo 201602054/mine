@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>小练习:订单列表</title>
+</head>
+<body>
+<!--
+	实现:实现全选功能,选中商品计算价格.
+-->
+	<h3>订单列表</h3>
+	<input type="checkbox" id="c1" value="30" onclick="cal()">鼠标30元
+	<input type="checkbox" id="c2" value="100" onclick="cal()">键盘100元
+	<input type="checkbox" id="c3" value="3000" onclick="cal()">手机3000元
+	<input type="checkbox" id="c4" value="6000" onclick="cal()">电脑6000元
+	<input type="checkbox" id="c5" onclick="allselect(this)">全选
+	<!--this指当前标签  -->
+	<p id="p1">总价:0元</p>
+
+	<script type="text/javascript">
+		//声明计算方法 
+		function cal(){
+			//得到所有的多选框 
+			var arr=document.getElementsByTagName("input");
+			var total=0;//计算总价 
+			for(var i=0;i<arr.length;i++){
+				//排除掉全选
+				if(arr[i].id!="c5"){
+					//判断是否选中
+					if(arr[i].checked){//选中才计算 arr[i].checked返回true表示选中 
+						//取出选中的商品价格并转成整数 
+						var money=parseInt(arr[i].value);
+						total+=money;
+					}
+				}
+			}
+			//显示总价
+			p1.innerText="总价:"+total+"元";
+		}
+	
+		
+	
+		//实现全选与全不选功能 
+		function allselect(input){
+			//得到全选的选中状态  input.checked返回true表示选中,反之未选中
+			//alert(input.checked);
+			
+			//得到所有的多选框 
+			var arr=document.getElementsByTagName("input");
+			//遍历
+			for(var i=0;i<arr.length;i++){
+				arr[i].checked=input.checked;
+			}
+			//计算总价
+			cal();
+		}
+	</script>
+</body>
+</html>

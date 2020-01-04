@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>隐藏部分列表</title>
+</head>
+<body>
+	<!--day06的demo03练习的jQuery实现  -->
+	<ul>
+		<li>亲戚
+			<ul>
+				<li>习大大</li>
+				<li>奥巴马</li>
+				<li>雷布斯</li>
+			</ul>
+		</li>	
+		<li>同事
+			<ul>
+				<li>马云</li>
+				<li>马后炮</li>
+				<li>马上成亲</li>
+			</ul>
+		</li>	
+		<li>女朋友们
+			<ul>
+				<li>貂蝉</li>
+				<li>妲己</li>
+				<li>王昭君</li>
+			</ul>
+		</li>	
+	</ul>
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		$("li>ul").hide();//将二层ul隐藏 
+		$("body>ul>li").click(function(){
+			//this代表触发事件的元素  是js对象  需要转为jq对象才能调用jq的方法
+			$(this).children().toggle();//显示的点击时隐藏,隐藏的点击显示 
+			 
+			//通过第一层ul的没有被选中的两个li并隐藏 
+			 $(this).siblings().children().hide();
+		});
+		
+		
+	</script>
+</body>
+</html>

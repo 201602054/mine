@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	/*属性选择器  */
+	input[type='text']{
+		background-color: green;
+	}
+	
+	/*伪类选择器  */
+	a:VISITED {/* 已经访问 */
+	color: red;
+}
+	a:LINK {/*未访问  */
+	color:pink;
+}
+	a:HOVER {/*悬停  */
+	color: purple;
+}
+	a:ACTIVE {/*点击  */
+		color: green;
+}
+
+*{/* 任意元素选择器 */
+	border: 1px solid gray;
+}
+</style>
+</head>
+<body>
+	<input type="text">
+	<input type="password"><br>
+	
+	
+	<a href="../imgs/a.jpg">超链接1</a><br>
+	<a href="../imgs/g.jpg">超链接2</a><br>
+	<a href="../imgs/h.jpg">超链接3</a><br>
+	<a href="../imgs/i.jpg">超链接4</a><br>
+</body>
+</html> 
+
+<!-- 
+各种常见样式:
+1.颜色赋值
+	1)颜色单词赋值
+	2)6位16进制赋值  #ff 00 00   红色
+	3)3位16进制	   #f00
+	4)3位十进制  rgb(0-255,0-255,0-255)
+	5)4位十进制  rgba(0-255,0-255,0-255,0-1)  a:透明度
+	
+
+ -->

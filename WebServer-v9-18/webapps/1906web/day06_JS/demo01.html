@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>小练习</title>
+<style type="text/css">
+	body>div{
+		width: 300px;
+		height: 300px;
+		border: 1px solid red;
+	}
+	div>div{
+		width: 100px;
+		height: 100px;
+		background-color: lightblue;
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<input type="button" value="添加" onclick="fun()">
+	<div id="d1"></div>
+	
+	<script type="text/javascript">
+		var n=0;
+		//设置计时器每秒增加一个div 
+		var timer=setInterval(function fun(){
+			n++;
+			if(n==9){
+				clearInterval(timer);
+			}
+			d1.innerHTML+="<div>div"+n+"</div>"	// += 保证增加的div不被覆盖
+		},1000);
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>事件模拟</title>
+</head>
+<body>
+	<input type="button" value="点我试试" onclick="alert('xxx')">	 
+	<div>hover方法测试</div>
+	<div>hover方法测试</div>
+	<div>hover方法测试</div>
+
+
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		setTimeout(function(){
+			$("input").trigger("click");
+		},3000);
+		
+		$("div").hover(function(){
+			$(this).css("color","red");
+		},function(){
+			$(this).css("color","blue");
+		});
+	</script>
+</body>
+</html>

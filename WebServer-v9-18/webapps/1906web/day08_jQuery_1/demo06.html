@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>动画练习</title>
+</head>
+<body>
+<script type="text/javascript"
+ src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	
+	setInterval(function(){
+		//创建图片标签
+		var img = $("<img src='../imgs/2.gif'>");
+		//设置绝对定位
+		img.css("position","absolute");
+		//获取0-1000的随机数
+		var top = parseInt(Math.random()*1000);
+		//把随机数给到图片
+		img.css("top",top+"px");
+		//添加到body中
+		$("body").append(img);
+		//右侧移动1000像素持续1秒 然后淡出 再删除
+		img.animate({"left":"1000px"},1000)
+			.fadeOut(1000,function(){
+				img.remove();
+			});
+	},100);
+	
+	
+	
+	
+</script>
+</body>
+</html>
+
+
+
+

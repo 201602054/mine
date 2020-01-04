@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>文本样式</title>
+<style type="text/css">
+	div{
+		/*文本修饰 
+			overline:上划线
+			underline: 下划线
+			line-through:删除线
+			none:去除文本修饰		例如:a标签自带下划线,用于去除该下划线
+		 */
+		 text-decoration: line-through;
+		 width: 200px;
+		 height: 80px;
+		 border: 3px solid red;
+		 
+		 /*文本水平对齐方式
+		 	 text-align: left(默认)/right/center;
+		   */
+		 text-align: center;
+		 
+		 /*文本颜色  */
+		 color: blue;
+		 
+		 
+		 /*行高 与width值相同是则为上下居中   */
+		 line-height: 80px;
+		 
+		 
+		 /*文本字体大小  */
+		 font-size: 30px;
+		 /*字体加粗    nolmal去除加粗 */
+		 font-weight: bold;
+		 /*斜体 */
+		 font-style: italic;
+		 /*字体设置  可以设置多个   */
+		 font-family: '楷体','黑体'; 
+		 /* font: 20px "simhei", Arial, Helvetica, sans-serif; */
+	}
+	
+	#a1{/*去除a标签的下划线   */
+		background-color:lightblue;
+		text-decoration: none;
+		border: 3px solid lightblue;
+		border-radius:10px;
+		/*a标签是行内元素,不能改宽高,更改显示方式即可   */
+		display: block;
+		width: 200px;
+		height: 50px;
+		color: purple;
+		font-size:25px;
+		/*控制字体的位置  上下居中,左右居中   */
+		line-height: 50px;
+		text-align: center;
+	}
+	h1 {
+	font-weight: normal;
+}
+</style>
+</head>
+<body>
+	<div>今天是第三天</div>
+	<a href="" id="a1">去浪</a>
+	
+	<h1>去cu加粗</h1>
+</body>
+</html>

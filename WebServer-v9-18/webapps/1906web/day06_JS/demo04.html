@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>小案例:下拉选</title>
+</head>
+<body>
+	<!--当下拉选值改变的时候触发onchange事件  -->
+	<select id="s1" onchange="myfun()">
+		<option>请选择</option>
+		<option value="0">河北</option>
+		<option value="1">湖北</option>
+		<option value="2">山东</option>
+	</select>
+	<select id="s2">
+		<option>请选择</option>
+	</select>
+	
+	<script type="text/javascript">
+		var arr=[["唐山","秦皇岛","石家庄"],
+		         ["武汉","十堰","黄冈"],
+		         ["菏泽","济南","青岛"]];
+		
+		function myfun(){
+			//1)每选择一个省对应的市不一样,需要清除之前其他省的市
+			s2.innerHTML="<option>请选择</option>";//是"="每次都会覆盖之前的值
+			
+			//2)通过用户点击省份的数组下标获取对应的城市数组 
+			var cities=arr[s1.value];//s1.value是对应省的下标  cities也是个数组 
+			//3)遍历城市数组 
+			for(var i=0;i<cities.length;i++){
+				var cityName=cities[i];//cities每个元素也是一个数组 
+				//创建option标签 
+				var opt=document.createElement("option");
+				//修改标签文本内容 
+				opt.innerText=cityName;
+				//将option添加到s2里面
+				s2.appendChild(opt);
+			}
+		}
+	</script>
+</body>
+</html>

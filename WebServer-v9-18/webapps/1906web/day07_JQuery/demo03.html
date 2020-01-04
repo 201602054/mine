@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text">
+	<input type="button" value="添加到最后面">
+	<input type="button" value="添加到最前面">
+	<input type="button" value="插入上海前面">
+	<input type="button" value="插入上海后面">
+	<input type="button" value="删除上海">
+	<ul>
+		<li>北京</li>
+		<li>上海</li>
+		<li>广州</li>
+	</ul>
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	//给第一个按钮条件事件 
+	$("input:eq(1)").click(function(){
+		//创建标签 
+		var li=$("<li></li>")
+		//取出文本框的内容放进li
+		var text=$("input:eq(0)").val();
+		li.text(text);
+		//把li添加到ul里面 
+		$("ul").append(li);
+	});
+	
+	//给第二个按钮条件事件 
+	$("input:eq(2)").click(function(){
+		var li=$("<li></li>");
+		li.text($("input:eq(0)").val());
+		$("ul").prepend(li);
+	});
+	
+	//给第三个按钮条件事件 
+	$("input:eq(3)").click(function(){
+		var li=$("<li></li>");
+		li.text($("input:eq(0)").val());
+		
+		$("li:contains('上海')").before(li);
+	});
+	//给第四个按钮条件事件 
+	$("input:eq(4)").click(function(){
+		var li=$("<li></li>");
+		li.text($("input:eq(0)").val());
+		$("li:contains('上海')").after(li);
+	});
+	//给第五个按钮条件事件 
+	$("input:eq(5)").click(function(){
+		$("li:contains('上海')").remove();
+	});
+</script>
+</body>
+</html>

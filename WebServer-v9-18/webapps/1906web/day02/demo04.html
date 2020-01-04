@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+
+/* 子孙后代选择器
+div里面div所有的span  */
+/*  div div span{
+ 	color: green;
+ } */
+ 
+ 
+ /* 子元素选择器 */
+/* 	div>div>span{
+		color:red;
+	} */
+	
+body>div>span{ 
+	color:red; 
+}	
+	
+</style>
+</head>
+<body>
+	<span>span1</span>
+	
+	<div>
+		<span>span2</span>
+	</div>
+	
+	<div>
+		<div>
+			<span>span3</span>
+		</div>
+		<span>span4</span>
+	</div>
+</body>
+</html>
+
+<!-- 
+CSS规则特性
+	1)继承性:标签可以继承上级标签的 [文本和字体] 相关的样式,部分自带效果的标签不受影响
+	2)层叠性:同一元素存在多个css规则,对于不冲突的声明可以叠加
+	3)优先性:同一元素存在多个css,对于冲突的声明优先级高的为准
+	
+样式优先级(低到高):浏览器缺省设置->外部样式表/内部样式表(就近优先)->内联样式
+	注意:相同样式,重复定义,以最后一次为准
+	
+border属性:用来设置元素的边框
+	(四边设置)border:width值	style值	 color值	;
+	(单边设置)border-left:width值   style值	color值;
+				...
+
+样式单位:
+	%	in(英寸)	  cm  mm  pt(磅  1pt=1/72in)	px(像素) em(当前字体尺寸的几倍)
+	
+overflow:当内容溢出元素框时如何处理
+	viserble	hidden	scroll	auto
+	
+background-repeat:可以控制背景图片的平铺效果
+	可取值:
+		repeat:在水平方向和垂直方向重复
+		repeat-x:仅在x方向重复
+		repeat-y:仅在y方向重复
+		no-repeat:仅显示一次 ,不重复
+ -->

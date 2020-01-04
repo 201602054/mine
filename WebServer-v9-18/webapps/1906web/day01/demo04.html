@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!--相对路径   
+	title 鼠标悬停在图片时显示的文本,src是图片路径-->
+	<img title="妖艳不???" src="1.jpg" height="400">	<!--图片在当前文件夹中  -->
+	<img alt="失效" src="../2.jpg"><!--图片在当前文件夹上一级中  -->
+	<img alt="" src="../../3.jpg"><!--图片在当前文件夹上上级中  -->
+	<img width="600" alt="" src="abc/4.jpg"><!--图片在当前文件夹下一级中  -->
+	
+	<!--绝对路径  
+	alt当图片不能正常显示时显示的文本-->
+	<img width="50%"  alt="该图片被和谐了" src="https://cdn.tmooc.cn/bsfile//courseIntroductionImg///3E7D3CB2D76D48449C4F03032A4D3881.jpg">
+	
+	
+	<!-- 图片的宽高(width/height)赋值:  [1]400px	或者	 [2]相对于上级标签的百分比(设置宽度后,高度等比例缩放)
+	只写一个,另一个会等比例缩放  -->
+	
+	<img  src="../imgs/2.gif">
+	
+</body>
+</html>

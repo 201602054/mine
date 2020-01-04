@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>浮动定位</title>
+<style type="text/css">
+#d {
+	width: 200px;
+	/* height: 200px; */
+	border: 3px solid red;
+	/*溢出设置overflow
+	取值:
+		viserble (默认值) 超出显示
+		hidden     超出隐藏
+		scroll		超出滚动 
+	  */
+    overflow: hidden; 
+}
+
+#d1 {
+	width: 50px;
+	height: 50px;
+	background-color: pink;
+	float: left;
+}
+
+#d2 {
+	width: 50px;
+	height: 50px;
+	background-color: green;
+	float: left;
+}
+
+#d3 {
+	width: 50px;
+	height: 50px;
+	background-color: blue;
+	float: left;
+}
+</style>
+</head>
+<body>
+
+	<div id="d">
+		<div id="d1"></div>
+		<div id="d2"></div>
+		<div id="d3"></div>
+	</div>
+</body>
+</html>

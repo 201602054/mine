@@ -1,0 +1,128 @@
+JavaScript:给页面添加动态效果和动态内容
+
+1.特点:
+	1)js属于脚本语言,不需要编译,由浏览器解析执行
+	2)属于弱类型语言  即:变量在声明时不需要指定数据类型,不同类型的数据在计算时自动转换
+		数据类型转换函数:
+			toSting			所有引用类型均可转换为String类型
+			parseInt		强制转换为整数,若不能转换则返回NaN
+			parseFloat		强制转换为浮点数,若不能转换则返回NaN
+			typeof 			获取当前变量类型	
+			isNaN(x)  		判断是否是数  是NaN(不是数)返回true
+	3)基于面向对象
+	4)安全性高:js只能访问浏览器内部的数据,不能访问浏览器以外(磁盘中的各种数据)的数据
+	5)交互性高,由于js语言可以直接嵌入到html中,可以与客户直接交互
+	
+2.三种引入方式:
+	1)内联:在标签的事件属性中添加js代码,当事件触发时js代码执行
+		<input type="button"  value="点我试试"  onclick="alert('试试就试试')">
+	2)内部:在html任意位置添加script标签,在标签内写js代码,页面加载时执行js代码
+	3)外部:在单独的js文件中写,通过script标签的src引入该js文件
+	
+3.JS语法  JS中只有对象类型
+	[1]常见的对象类型
+		1)数值:number
+		2)字符串:String   js中使用''或""修饰
+		3)布尔值:boolean    true/false
+		4)未定义:undefined	当变量只声明不赋值时此变量的类型为未定义类型
+		5)自定义对象类型:	Object
+	[2]变量声明和赋值
+		var x=10;  声明一个全局变量	全局
+		let x=10;	声明一个局部变量 	作用域范围内有效
+		例如:.
+			var u;//类型为未定义	
+			var new Person();
+	[3]运算符
+		1)	==	先统一类型再比较值
+			===  先比较类型再比较值
+		2)除法运算,会自动转换整数和小数
+			js:
+				var x=5; var y=2;   x/y=2.5;
+			
+			typeof 获取当前变量类型	
+	[4]语句
+		1)与java大体相同
+		2)js:if和while括号里的内容如果不是boolean会自动转换成布尔值
+			自动转换规则:
+				数值: 0---false 		其他true
+				字符串:	""转false	其他true
+				未定义转false		其他true
+				null转false			其他true
+	[5]for中int i 改为 var i 或let i
+	
+	[6]方法声明
+		js:function 方法名(参数列表){方法体}	
+		
+		声明四种常见的方法:
+			1)无参无返回值
+			2)无参有返回值
+			3)有参无返回值
+			4)有参有返回值
+	[7]三种声明方法的方式
+		1)function 方法名(参数列表){方法体};	----->常用
+		2)var 方法名 = function(参数列表){方法体};
+		3)var 方法名=new Function("参数1","参数2","alert('')");  alert('')是方法体
+	
+4.页面相关的方法和属性
+	1)通过id获取页面中的元素对象
+		var d=document.getElementById("");
+		
+		通过标签名获取页面中的元素对象们
+		var arr=document.getElementsByTagName("标签名");
+	2)获取和修改标签的文本内容
+		d.innerText="";
+	3)获取和修改文本框的值
+		i.value;		获取
+		i.value="";		修改
+	NaN  不是一个数
+	isNaN(x)  判断是否是数  是NaN(不是数)返回true
+	4)获取和修改标签的html内容
+		d.innerHTML		      	      		获取
+		d.innerHTML="<h1>abc</h1>" 			修改 
+		d.innerHTML+="<h1>abc</h1>"			追加内容
+定时器:
+	1)开启计时器	var timer=setInterval(function的方法名,ms值);    ()第一个位置可以直接使用匿名内部类实现
+	    关闭定时器写var timer=,否则可以不写
+	2)关闭计时器
+		clearInterval(计时器名);	
+	3)只执行一次的定时器:ms后执行一次
+		setTimeout(function的方法名,ms值)						()第一个位置可以直接使用匿名内部类实现
+		
+5.JS对象分类
+	1)js内置对象  包括:String number boolean...
+		String对象常用方法:与String方法大致一样
+		  string.charCodeAt(index)返回指定位置字符的Unicode编码
+			
+	2)浏览器相关对象BOM(浏览器对象模型)
+	3)页面相关的对象DOM(文档对象模型)
+		
+		外部对象:BOM对象	DOM对象
+	
+	5.1BOM
+		window对象:
+			在window对象中的方法和属性是全局属性和全局方法,调用时可省略window.
+		window常见方法: 
+				alert() 只有"确定"按钮的(提示框)
+				confirm()带"取消"的提示框(确认框)  	
+				prompt()带输入框的提示框(文本框) 
+				parseInt()/parseFloat() 转为整数/小数
+			    isNaN();	判断是不是数
+		window常见属性:
+			location 位置
+				location.href 		获取浏览器请求地址
+				location.href=""	修改浏览器请求地址
+			history 历史
+				history.length		历史页面数量
+				history.back()		返回上一个页面
+				history.forward()	前往下一个页面
+				history.go(n)		n为正数表示前进页数,负数为后退页数   0代表刷新 
+			screen 屏幕
+				screen.width/height		屏幕分辨率
+				screen.availWidth/Height  可用分辨率	
+			navigator导航帮助
+				navigator.userAgent		获取浏览器的相关信息
+			
+通过CSS控制元素的显示和隐藏
+	隐藏:display:block/inline/inline-block/none(隐藏);
+			
+事件分为多种,如鼠标事件,键盘事件，MEdia事件,Form事件等	

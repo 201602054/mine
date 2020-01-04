@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	body>div{
+		width: 300px;
+		height: 300px;
+		border: 1px solid red;
+	}
+	div>div{
+		width: 100px;
+		height: 100px;
+		background-color:yellow;
+		float: left;
+	}
+</style>
+</head>
+<body>
+	<input type="button" value="添加" onclick="fun()"> 
+	<div id="d1"></div>
+	
+	<script type="text/javascript">
+		function fun(){//实现:如果div中的小div满了就不在添加
+			//获取div中的所有元素
+			var arr=document.getElementsByTagName("div");
+			if(arr.length<=9){
+				d1.innerHTML+="<div>div</div>";
+			}
+		}
+		
+		// 自动添加div
+		var x=0;
+		var timer=setInterval(function auto(){
+			x++;
+			if(x==6){
+				clearInterval(timer);
+			}
+			d1.innerHTML+="<div>div"+x+"</div>";		
+		},1000);
+	</script>
+</body>
+</html>

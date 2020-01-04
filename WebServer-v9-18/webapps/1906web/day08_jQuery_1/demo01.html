@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>小案例(省市联动):下拉选</title>
+</head>
+<body>
+	<!--当下拉选值改变的时候触发onchange事件  -->
+	<select>
+		<option>请选择</option>
+		<option value="0">河北</option>
+		<option value="1">湖北</option>
+		<option value="2">山东</option>
+	</select>
+	<select>
+		<option>请选择</option>
+	</select>
+	
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		var arr=[["唐山","秦皇岛","石家庄"],
+		         ["武汉","十堰","黄冈"],
+		         ["菏泽","济南","青岛"]];
+		
+		$("select:first").change(function(){
+			//每选择一个省对应的市不一样,需要清除之前其他省的市
+			$("select:last").html("<option>请选择</option>");
+			
+			//this代表触发事件的标签,是js对象
+			var cities=arr[this.value];//获取省对应的城市信息
+			for(var i=0;i<cities.length;i++){
+				var op=$("<option></option>");//创建option标签对象 
+				op.text(cities[i]);//将op对象文本内容改为城市名字
+				$("select:last").append(op);//添加 
+			}
+		});
+	</script>
+</body>
+</html>

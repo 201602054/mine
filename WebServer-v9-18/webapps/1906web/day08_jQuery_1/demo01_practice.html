@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>小案例(省市联动):下拉选</title>
+</head>
+<body>
+	<!--当下拉选值改变的时候触发onchange事件  -->
+	<select>
+		<option>请选择</option>
+		<option value="0">河北</option>
+		<option value="1">湖北</option>
+		<option value="2">山东</option>
+	</select>
+	<select>
+		<option>请选择</option>
+	</select>
+	
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		var arr=[["唐山","秦皇岛","石家庄"],
+		         ["武汉","十堰","黄冈"],
+		         ["菏泽","济南","青岛"]];
+		$("select:first").change(function(){
+			$("select:last").html("<option>请选择</option>")
+			
+			var cities=arr[this.value];
+			for(var i=0;i<cities.length;i++){
+				var opt=$("<option></option>");
+				opt.text(cities[i]);
+				$("select:last").append(opt);
+			}
+		});
+		
+	</script>
+</body>
+</html>

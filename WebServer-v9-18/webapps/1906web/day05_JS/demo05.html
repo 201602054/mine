@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" id="i1">
+	<input type="button" value="猜一猜" onclick="fun()">
+	<div id="d1">请输入0-100的数字</div>
+	
+	<script type="text/javascript">
+		var n=parseInt(Math.random()*101); //产生0-100的随机数 
+		var count=0;
+		function fun(){
+			count++;
+			if(i1.value>n){
+				d1.innerText="输入的数偏大";				
+			}else if(i1.value<n){
+				d1.innerText="输入的数偏小";	
+			}else{
+				d1.innerText="恭喜您猜对啦!这个数是"+n+",一共猜了"+count+"次";	
+				/*不能用return   */
+			}	
+		}	
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>制作有五张图片轮播的轮播图</title>
+<style type="text/css">
+	img{
+		width: 200px;
+		height: 150px;
+	}
+</style>
+</head>
+<body>
+	<img src="../../imgs/a.jpg">
+	<img src="../../imgs/b.jpg">
+	<img src="../../imgs/c.jpg">
+	<img src="../../imgs/d.jpg">
+	<img src="../../imgs/e.jpg">
+	
+	<script type="text/javascript">
+		//1)获取五张图片并通过遍历数组只显示第一张  
+		var arr=document.getElementsByTagName("img");
+		for(var i=0;i<arr.length;i++){
+			if(i!=0){//不是第一张隐藏
+				arr[i].style.display="none";
+			}
+		}
+		//2) 借助计时器,轮流显示其他图片
+		var n=0;//借助一个自增的数,取余得到对应图片在数组中的下标 
+		setInterval(function(){
+			n++;
+			var index=n%5;
+			for(var i=0;i<arr.length;i++){
+				/* if(i==index){
+					arr[i].style.display="inline-block";//img是行内块 
+				}else{
+					arr[i].style.display="none";//其他图片隐藏 
+				} */
+				arr[i].style.display=(i==index)?"inline-block":"none";
+			}
+		},2000);
+		
+		
+	</script>
+</body>
+</html>

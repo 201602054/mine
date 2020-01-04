@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>用户注册</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	color: blue;
+	background:lightblue;
+}
+.main{
+	margin-top:200px ;
+}
+</style>
+</head>
+<body>
+	<div align="center" class="main">
+		<h1>欢迎注册</h1>
+		<form action="./reg" method="post">
+			<table border="1">
+				<tr>
+					<td>用户名</td>
+					<td><input name="username" type="text"></td>
+				</tr>
+				<tr>
+					<td>密&nbsp;&nbsp;码</td>
+					<td><input name="password" type="password"></td>
+				</tr>
+				<tr>
+					<td>昵&nbsp;&nbsp;称</td>
+					<td><input name="nickname" type="text"></td>
+				</tr>
+				<tr>
+					<td>年&nbsp;&nbsp;龄</td>
+					<td><input name="age" type="text"></td>
+				</tr>
+				<tr>
+					<!-- colspan 表格中横跨几列 -->
+					<td colspan="2" align="center"><input type="submit"
+						value="点击注册" style="color: red"></td>
+				</tr>
+			</table>
+			<h4><a href="./login.html">登录</a></h4>
+		</form>
+	</div>
+</body>
+</html>

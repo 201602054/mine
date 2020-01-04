@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>获取和修改标签的html内容</title>
+</head>
+<body>
+	<input type="button" value="添加" onclick="fun()">
+	<div id="d1"></div>
+	
+	<script type="text/javascript">
+		var x=0;
+		function fun(){
+			x++;
+		//	d1.innerHTML="<h1>"+x+"</h1>";  每执行一次覆盖之前添加的
+		d1.innerHTML+="<h1>"+x+"</h1>";//每次新建一个h1标签 不会覆盖 
+		}
+		//开启定时器每隔一秒执行fun()  	
+		//var timer=setInterval(fun,1000);方式一
+		//方式二 匿名内部类
+		var timer=setInterval(function(){
+			x++;
+			d1.innerHTML+="<h1>"+x+"</h1>";
+			if(x==5){
+				clearInterval(timer);//停止计时 
+			}
+		},1000);
+		
+		//只执行一次的定时器  匿名内部类形式的定时器 
+		setTimeout(function(){
+			alert("lalala!");			
+		},3000);
+		
+	</script>
+</body>
+</html>

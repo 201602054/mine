@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bootstrap Template</title>
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,user-scalable=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap3/css/bootstrap.css">
+<link rel="stylesheet" type="text/css"
+	href="../bootstrap3/font-awesome-4.7.0/css/font-awesome.css" />
+</head>
+<body>
+
+	<!--内文档--Web开发页--BootStrap--组件--导航  -->
+	
+	<!--标签式 导航组件  -->
+	<ul class="nav nav-pills">
+		<li role="presentation"><a href="#">北京</a></li>
+		<li role="presentation"><a href="#">上海</a></li>
+		<li role="presentation"><a href="#">杭州</a></li>
+	</ul>
+
+	<!--胶囊式  -->
+	<ul class="nav nav-pills"><!--横排显示  -->
+		<li role="presentation" class="active"><a href="#">Home</a></li>
+		<li role="presentation"><a href="#">Profile</a></li>
+		<li role="presentation"><a href="#">Messages</a></li>
+	</ul>
+	<ul class="nav nav-pills nav-stacked"><!--竖排显示  -->
+		<li role="presentation"><a href="#">魏国</a></li>
+		<li role="presentation"><a href="#">蜀国</a></li>
+		<li role="presentation"><a href="#">吴国</a></li>
+	</ul>
+</body>
+<script type="text/javascript" src="../bootstrap3/jquery.min.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/bootstrap.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/holder.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/html5shiv.min.js"></script>
+<script type="text/javascript"
+	src="../bootstrap3/js/css3-mediaqueries.js"></script>
+<script type="text/javascript" src="../bootstrap3/js/respond.min.js"></script>
+
+<script type="text/javascript">
+	//给页面中的li添加点击事件
+	$("li").click(function() {
+		$(this).attr("class", "active");//选中的设置效果 
+		$(this).siblings().attr("class", "");//其他没点中的不显示效果 
+	});
+</script>
+</html>

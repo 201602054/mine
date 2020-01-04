@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!--内部样式  -->
+<style type="text/css">
+/* 标签名选择器:选择页面中所有同名的标签  */
+	h3 {
+		background-color: gray;	
+	}
+	#myh4{
+		color: orange;
+	}
+	#myh3{
+		color: orange;
+	}
+	.c1{
+		color: pink;
+	}
+	/*分组选择器 :将现有选择器通过逗号合并成一个选择器  */
+	.c1,#myh4,h5{
+	/* 1像素的实体边框   */
+		border: 1px solid red;
+	}
+</style>
+
+<!--引入外部css文件  -->
+<link rel="stylesheet" href="first.css">
+</head>
+<body>
+	<h3 style="color: green;">今天周一,真tm困</h3>
+	<h5 style="background-color: yellow;">该下课了~~</h5>
+	<h3  style="color: green;">吃啥捏?</h3>
+	
+	<h4 id="myh4">吃了睡</h4>
+	<h4>睡了吃</h4>
+	
+	
+	<div class="c1">div1</div>
+	<div>div2</div>
+	<div>div3</div>
+	<span class="c1">span1</span>
+	<span>span2</span>
+	<span>span3</span>
+	<h5 class="c1">学习</h5>
+</body>
+</html>
+
+<!-- 
+CSS引入方式:  CSS(Cascading层叠Style样式sheet表)
+	内联样式:在单个标签中写样式代码 		缺点:不能复用
+	内部样式:在head标签中添加style标签		优点:可以当前页面复用  	缺点:不能多页面复用		
+	外部样式:在单独的css文件中写样式代码,在需要用到的页面通过link标签引入css文件 
+			好处:多页面复用,使得html与css分离
+
+选择器:
+	1)标签名选择器:		格式:标签名{样式代码}
+	2)id选择器:		页面中的标签都可以添加一个id属性,尽量不重复		
+			格式:	#id{}    			场景:给某一标签添加样式时使用
+	3)class(类)选择器: 格式: .class{}   	场景:当需要给页面中需要相同样式的标签添加样式
+	4)分组选择器: 将多个现有选择器通过逗号合并成一个选择器
+			格式: .c1,#myh4,h5{}
+  派生选择器:用来选择子元素		两种:	5)和6)
+	5)子孙后代选择器:通过元素之间的关系选择元素(即:选择div的所有子孙后代)
+			格式:   div span{}
+	6)子元素选择器(即:选择div的所有子元素)
+			格式:div>span{}
+	7)属性选择器:通过元素的属性选择
+			格式:标签名[属性名='值']{} 
+	8)伪类选择器:选择的是元素的状态  
+			格式:	a:状态{}
+		未访问状态	访问过状态	悬停状态		点击状态
+		link		visited		hover		active
+	9)任意元素选择器:选择页面中所有的标签
+			格式:	*{}
+		
+ -->

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+	</head>
+<body>
+	<h3>无序列表</h3>
+	<ul type="square"> <!--type:circle(空心圆圈) 
+						   disc(实心圆圈)
+						   square(实心方形)-->
+		<li>张飞</li>
+		<li>刘备</li>	<!--list item列表项  -->
+		<li>关羽</li>
+		<li>貂蝉</li>
+	</ul>
+	
+	
+	
+	<h3>有序列表</h3>
+	<!--type是序号类型,start是起始值,reversed降序 
+	type类型可以写a,A,i,1 -->
+	<ol type="10" start="5" reversed="reversed">	<!--ordered list 有序列表  -->
+		<li>拿出钥匙</li>
+		<li>插入锁芯</li>
+		<li>打开门</li>
+	</ol>
+	
+	
+	<h3>定义列表</h3>
+	<!--自带层级效果  -->
+	<dl>
+		<dt>硬菜</dt>
+			<dd>手抓牛骨</dd>
+			<dd>羊肉泡馍</dd>
+		<dt>甜点</dt>
+			<dd>西瓜</dd>
+			<dd>蛋糕</dd>
+	</dl>
+	
+	<h3>列表嵌套</h3>
+	<!-- 有序列表和无序列表可以在任意位置无限嵌套 -->
+	<ul type="square">
+		<li>凉菜
+			<ol>
+				<li>手拍黄瓜</li>
+				<li>凉拌鱼皮</li>
+				<li>飘香毛豆</li>
+			</ol>
+		</li>
+		<li>炒菜
+			<ol>
+				<li>宫保鸡丁</li>
+				<li>鱼香肉丝</li>
+				<li>粉蒸肉</li>
+			</ol>
+		</li>
+	</ul>
+	
+</body>
+</html>

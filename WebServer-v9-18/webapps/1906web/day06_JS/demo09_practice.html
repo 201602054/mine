@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的购物车</title>
+</head>
+<body>
+<!--实现全选功能,选中自动计算总价  -->
+	<h1>我的购物车</h1>
+	<input type="checkbox" value="120" id="c1" onclick="cal()">剃须刀120元
+	<input type="checkbox" value="90" id="c2" onclick="cal()">吹风机90元
+	<input type="checkbox" value="400" id="c3" onclick="cal()">洗面奶套装400
+	<input type="checkbox" value="8000" id="c4" onclick="cal()">iPhoneX 8000元
+	<input type="checkbox" value="350" id="c5" onclick="cal()">球鞋 350元
+	<input type="checkbox" id="c6" onclick="allselect(this)">全选
+	<p id="p1">总价:0元</p>
+	
+	
+	<script type="text/javascript">
+		//1)实现全选功能
+		function allselect(input){
+			//得到所有的input
+			var arr=document.getElementsByTagName("input");
+			//遍历
+			for(var i=0;i<arr.length;i++){
+				arr[i].checked=input.checked;
+			}
+			//全选的状态也要计入总价
+			cal();
+		}
+		
+		//2实现计算总价功能
+		function cal(){
+			var total=0;
+			//得到所有的input
+			var arr=document.getElementsByTagName("input");
+			for(var i=0;i<arr.length;i++){
+				//排除是全选的状态
+				if(arr[i].id!="c6"){
+					//判断是不是被选中
+					if(arr[i].checked){
+						var money=parseInt(arr[i].value);//得到的input的value值是字符串类型,转为int
+						total+=money;
+					}
+				}
+			}
+			p1.innerText="总价:"+total+"元"
+		}
+	</script>
+</body>
+</html>

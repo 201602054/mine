@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input id="i" type="text">
+	<input  type="button" value="平方" onclick="fun()">
+	<div id="d1"></div>
+	
+	<script type="text/javascript">
+		function fun(){
+			if(isNaN(i.value)){
+				d1.innerText="输入错误";
+			}else{
+				d1.innerText=Math.pow(i.value,2);		
+			}
+		}
+	</script>
+</body>
+</html>

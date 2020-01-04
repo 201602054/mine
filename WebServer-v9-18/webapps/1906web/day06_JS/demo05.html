@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>鼠标键盘事件</title>
+<style type="text/css">
+#d1 {
+	width: 200px;
+	height: 200px;
+	border: 1px solid red;
+}
+</style>
+</head>
+<body>
+
+	<input type="text" onkeydown="keydown()" onkeyup="keyup()">
+
+
+
+	<div id="d1" onmouseover="overfun()" onmouseout="outfun()"
+		onmousedown="downfun()" onmouseup="upfun()" onmousemove="movefun()"></div>
+
+
+
+	<script type="text/javascript"> 
+	function keydown(){
+		//event.keyCode得到按键编码 
+		d1.innerText="键盘按下:"+event.keyCode;
+	}
+	function keyup(){
+		//把用户按下的编码转换成字符 
+		var str=String.fromCharCode(event.keyCode);
+		d1.innerText="键盘抬起:"+str;
+	}
+	
+	
+		function overfun(){
+			d1.innerText="鼠标移入";
+		}
+		function outfun(){
+			d1.innerText="鼠标移出";
+		}
+		function downfun(){
+			d1.innerText="鼠标按下";
+		}
+		function upfun(){
+			d1.innerText="鼠标抬起";
+		}
+		var x=0;
+		function movefun(){
+			x++;
+			d1.innerText="鼠标移动"+x;
+		}
+		
+	</script>
+</body>
+</html>

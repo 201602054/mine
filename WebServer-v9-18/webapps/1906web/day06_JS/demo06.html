@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>缩放窗口图片随之变化</title>
+<style type="text/css">
+	body{
+		background-image: url("../imgs/1.jpg");
+	}
+</style>
+</head>
+<body>
+	<script type="text/javascript">
+	onload=function(){//页面加载事件 
+		d1.innerText="啦啦啦";
+		
+		
+		//获取窗口的宽高
+		var w=document.body.parentElement.clientWidth;
+		var h=document.body.parentElement.clientHeight;
+		// alert(w+":"+h);
+		document.body.style.backgroundSize=w+"px "+h+"px";
+		
+	}
+	
+	onresize=function(){//窗口尺寸改变事件 
+		//获取窗口的宽高
+		var w=document.body.parentElement.clientWidth;
+		var h=document.body.parentElement.clientHeight;
+		// alert(w+":"+h);
+		document.body.style.backgroundSize=w+"px "+h+"px";
+		
+	}
+	</script>
+
+	<div id="d1"></div>
+</body>
+</html>

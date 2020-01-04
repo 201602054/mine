@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<select id="s1" onchange="fun()">
+		<option>请选择</option>
+		<option value="0">湖北</option>
+		<option value="1">山东</option> 
+		<option value="2">河北</option> 
+	</select>
+	<select id="s2">
+		<option>请选择</option>
+	</select>
+	
+	<script type="text/javascript">
+		var arr=[["十堰","黄冈","宜昌","武汉"],
+		         ["临沂","青岛","菏泽","济南"],
+		         ["秦皇岛","唐山","石家庄"]];
+		function fun(){
+			//选择一个省时,应该删除其他省对应的市
+			s2.innerHTML="<option>请选择</option>";
+			
+			var cities=arr[s1.value];//s1.value是对应的option的value 
+			for(var i=0;i<cities.length;i++){
+				var cityName=cities[i];
+				//创建一个option标签
+				var opt=document.createElement("option");
+				opt.innerText=cityName;
+				//将option标签追加到s2下面
+				s2.appendChild(opt);
+			}
+		}
+	</script>
+</body>
+</html>

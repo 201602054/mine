@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>按钮的点击事件</title>
+</head>
+<body>
+	<!--内联方式添加js代码  点击弹框显示内容  -->
+	<input type="button"  value="点我试试"  onclick="alert('试试就试试')">
+	
+	<script type="text/javascript">
+		alert("内部引入成功!");
+	</script>
+	
+	<!--外部引入方式
+		注意:外部引入了js文件,就不能在<script>标签内部写js代码
+	  -->
+	<script type="text/javascript" src="first.js">
+	</script>
+</body>
+</html>

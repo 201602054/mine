@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>下雪</title>
+<style type="text/css">
+	body{
+		background-color: black;
+		margin: 0;
+	}
+</style>
+</head>
+<body>
+	
+
+<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+<script type="text/javascript">
+	onresize=setInterval(function(){
+		//创建图片标签
+		var img=$("<img src='../imgs/snow.png'>");
+		//设置绝对定位 
+		img.css("position","absolute");
+		
+		//随机大小的雪花    20-40
+		var size=parseInt(Math.random()*21)+20;
+		img.css({"width":size+"px","height":size+"px"});
+			
+		//获取窗口的宽高
+		var w=document.body.parentElement.clientWidth;
+		var h=document.body.parentElement.clientHeight;
+		
+		//获取窗口宽度的随机数
+		var left=parseInt(Math.random()*(w-size)); 
+		//把随机数给图片 
+		img.css("left",left+"px");
+		//添加到body中
+		$("body").append(img);
+		
+		//右移动1000像素持续1秒
+		img.animate({"top":(h-size)+"px","left":left+200+"px"},100*size)
+		.fadeOut(1000,function(){
+			img.remove();
+		});
+	},50);
+	
+</script>
+</body>
+</html>

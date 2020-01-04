@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>内边距</title>
+<style type="text/css">
+	body>div{
+		width: 200px;
+		height:200px;
+		background-color: red;
+		/*添加内边距宽度会受影响 */
+		/* padding-left: 50px; */
+	}
+	
+	div>div{
+		width: 50px;
+		height: 50px;
+		background-color: yellow;
+		/*添加外边距宽度不会受影响 */
+		margin-left: 50px; 
+	}
+	
+	#s1{
+		border: 3px solid blue;
+		padding-left: 30px;
+		padding-right: 30px;
+		
+		/*行内元素影响元素所占宽度,但不影响所占高度   */
+		padding-bottom: 20px;
+	}
+</style>
+</head>
+<body>
+	<div>
+		<div></div>
+	</div>
+	<span id="s1">span1</span><span>span2</span>
+	<div></div>
+	
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	h3{
+		color: rgba(0,255,0,0.2);
+	} 
+	
+	#d1{
+		width: 200px;
+		height:200px;
+		border: 1px solid red; 
+		background-color: gray;
+		/*背景图片 相对路径/绝对路径 */
+		background-image: url("../imgs/a.jpg");	
+		/* 修改图片大小  宽  高  */	
+		background-size:100px 100px; 
+		/* 
+		background-repeat:可以控制背景图片的平铺效果
+			可取值:
+					repeat:在水平方向和垂直方向重复
+					repeat-x:仅在x方向重复
+					repeat-y:仅在y方向重复
+					no-repeat:仅显示一次
+		*/
+		background-repeat: no-repeat;
+		/* 控制背景图片位置 : 水平百分比  垂直百分比  */
+		background-position:100% 100%;
+		
+		/* background-attachment:设置背景图片是否随页面移动 
+			scroll是默认值,会随之移动,fixed不会随之移动
+		*/
+		background-attachment:inherit; 
+	}
+	
+	
+	
+	#d2{
+		background-color: #E8E8E8;
+		width: 611px;
+		height:376px;
+		background-image: url("http://doc.tedu.cn/tstore_v1/images/itemCat/study_computer_img1.png");
+		background-size: 318px 319px;
+		background-repeat: no-repeat;
+		background-position: 90% 50%;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="d1"></div>
+	<div id="d2"></div>
+	<h3>颜色测试</h3>
+</body>
+</html>
+

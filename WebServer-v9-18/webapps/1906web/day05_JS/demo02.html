@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>JS中声明四种常见的方法</title>
+</head>
+<body>
+
+	<input type="button" value="测试" onclick="fn1()"><!--点击后调用js中的方法  -->
+	
+	<script type="text/javascript">
+		// 无参无返回值    第一种声明方法的方式   
+		function fn1(){
+			alert("fn1执行");		
+		}
+		//fn1();//调用  
+		
+		
+		/*有参无返回最值    因为所有的类型都是var,所以不用写类型 
+		function fn2(name,age){
+			alert(name+":"+age);
+		}
+		fn2("貂蝉",15);*/
+		
+		/*无参有返回值  
+		function fn3(){
+			return "abc";
+		}
+		 var s=fn3();
+		 alert(s);*/
+		 
+		 //有参有返回值
+		 function fn4(x,y){
+			 return x*y;
+		 }
+		 /* var ss=fn4(3,8);
+		 alert(ss); */
+		 
+		 //第二种声明方法的方式
+/* 		 var fn5=function(name,age){
+			alert(name+":"+age);			 
+		 }
+		 fn5("刘备",25); */
+		 
+		 //第三种声明方式
+		 var fn6=new Function("name","age","alert(name+':'+age)");
+		 fn6("关羽",19);
+		
+		
+	</script>
+</body>
+</html>

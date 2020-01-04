@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>计时器</title>
+</head>
+<body>
+	<input type="button" value="添加" onclick="fun()">
+	<div id="d"></div>
+	
+	<script type="text/javascript">
+		var x=0;
+		var timer=setInterval(function fun(){
+			x++;
+			d.innerHTML+="<h1>"+x+"</h1>";	//注意符号是  +=  
+			if(x==3){
+				clearInterval(timer);//停止计时 
+			}
+		},1000);//启动计时器
+		
+		//指定时间后执行一次的计时器 
+		setTimeout(function(){
+			alert("5s时弹出! ");
+		},5000);
+	</script>
+</body>
+</html>

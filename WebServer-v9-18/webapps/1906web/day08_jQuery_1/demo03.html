@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>购物车</title>
+<style type="text/css">
+	table{
+		border: 1px solid red;
+		/* 将两条线合并为一条线 */
+		border-collapse: collapse; 
+		text-align: center;
+		margin: 0 auto;
+	}
+	td,th{
+		border: 1px solid red;
+	}
+</style>
+</head>
+<body>
+	<table>
+		<caption><b>特价商品</b></caption>
+		<tr>
+			<th>商品名称</th>		
+			<th>商品单价</th>		
+			<th>商品库存</th>		
+			<th>操作</th>		
+		</tr>
+		<tr>
+			<td>华为手机</td>
+			<td>5000</td>
+			<td>100</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+		<tr>
+			<td>苹果手机</td>
+			<td>8000</td>
+			<td>500</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+		<tr>
+			<td>iPad</td>
+			<td>6000</td>
+			<td>1200</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+		<tr>
+			<td>篮球</td>
+			<td>150</td>
+			<td>200</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+	</table>
+	
+	<table>
+		<caption>购物车</caption>
+		<tr>
+			<th>商品名称</th>
+			<th>商品单价</th>
+			<th>商品数量</th>
+			<th>商品金额</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>总价:</td>
+			<td colspan="4">0元</td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		$("input").click(function(){
+			//创建tr,td标签对象 
+			var tr=$("<tr></tr>");
+			var nametd=$("<td></td>");
+			var pricetd=$("<td></td>");
+			var numtd=$("<td><input type='button' value='-' onclick='numfn(-1)'><span>1</span><input type='button' value='+' onclick='numfn(1)'></td>");
+			var moneytd=$("<td></td>");
+			var deltd=$("<td><input type='button' value='删除'></td>");
+			
+			//获取特价商品表中的商品名称和单价的文本内容 
+			var name=$(this).parent().siblings().eq(0).text();//eq();取出来的是jq对象 
+			var price=$(this).parent().siblings().eq(1).text();
+			nametd.text(name);//设置文本内容 
+			pricetd.text(price);
+			moneytd.text(price);
+			//把五个td添加到tr里面
+			tr.append(nametd);
+			tr.append(pricetd);
+			tr.append(numtd);
+			tr.append(moneytd);
+			tr.append(deltd);
+			//把tr添加到第二个table的最后一个tr的前面 
+			$("tr:last").before(tr);
+			calfn();
+			
+			//删除
+			deltd.children().click(function(){//deltd是第二个表的第五列对象  
+				tr.remove();//方法一			※※※※※※※※※※※※※※※※※※※※※※※
+				//$(this).parent().parent().remove();//方法二   动态绑定的事件this才会触发按钮 
+				calfn();
+			});
+		});
+		
+		
+		
+		//增减数量的方法
+		function numfn(x){
+				/*
+	事件源:触发事件的标签.只有动态绑定的事件方法中this代表的才是事件源 
+				*/
+			//获取事件源的另一种方式  
+			var obj=event.target||event.srcElement;//考虑兼容性问题 
+			//obj就是事件源(用户点击的-+号)	
+			//得到原来的数值
+			var num=parseInt($(obj).siblings("span").text());//转为整数 	
+			num+=x;
+			$(obj).siblings("span").text(num);//设置内容 
+			if(num==0){//控制数量
+				$(obj).parent().parent().remove();				
+			}
+			
+			//获取单价
+			var price=$(obj).parent().prev().text();
+			$(obj).parent().next().text(price*num);//是乘法,price不用转为整数 
+			
+			//计算总价
+			calfn();
+		}
+	
+			
+		//封装计算总价的方法  在添加到购物车,删除记录,更改数量时都会调用 
+		function calfn(){
+			var total=0;
+			//得到第二个table里的每一行并遍历  
+			$("table:last tr").each(function(){
+				//得到每一行的"商品金额"
+				var money=parseInt($(this).children().eq(3).text());//this指当前遍历的tr
+				if(!isNaN(money)){//如果是数   即:排除第一行和最后一行 
+					//累加money 
+					total+=money;
+				}
+			});
+			$("td:last").text(total+"元");
+		}
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2>联系人</h2>
+	<ul>
+		<li onclick="fun(this)">家人
+			<ul class="c1">
+				<li>马原</li>
+				<li>马化腾</li>
+				<li>雷布斯</li>
+			</ul>
+		</li>
+		<li onclick="fun(this)">女朋友们
+			<ul class="c1">
+				<li>妲己</li>
+				<li>貂蝉</li>
+				<li>甄姬</li>
+			</ul>
+		</li>
+		<li onclick="fun(this)">社会哥
+			<ul class="c1">
+				<li>黑帮k哥</li>
+				<li>市长大人</li>
+				<li>广场舞舞神</li>
+			</ul>
+		</li>
+	</ul>
+	
+	<script type="text/javascript">
+		//隐藏第二层的ul
+		var arr=document.getElementsByClassName("c1");
+		for(var i=0;i<arr.length;i++){
+			arr[i].style.display="none";
+		}
+		
+		function fun(li){
+			//得到二层ul
+			var ul=li.getElementsByTagName("ul")[0];
+			//显示的隐藏,隐藏的显示
+			ul.style.display=(ul.style.display=="none")?"block":"none";
+			
+			//遍历二层数组
+			for(var i=0;i<arr.length;i++){
+				if(arr[i]!=ul){//如果点击的不是当前第一层ul下的li标签,不会显示.
+							  //即:每次只能显示一个二层ul的li标签  
+					arr[i].style.display="none";
+				}
+			}
+			
+		}
+	</script>
+</body>
+</html>

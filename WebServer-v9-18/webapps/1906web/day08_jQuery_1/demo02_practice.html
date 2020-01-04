@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>员工列表小练习</title>
+</head>
+<body>
+	<input type="text" placeholder="姓名">
+	<input type="text" placeholder="年龄">
+	<input type="text" placeholder="工资">
+	<input type="button" value="添加">
+	
+	<table>
+		<caption>员工列表</caption>
+		<tr>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>工资</th>
+			<th>操作</th><!--删除按钮  -->
+		</tr>
+	</table>
+	
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+		$("input:last").click(function(){
+			//添加tr,td
+			var tr=$("<tr></tr>");
+			var nametd=$("<td></td>");
+			var agetd=$("<td></td>");
+			var saltd=$("<td></td>");
+			var deltd=$("<td><input type='button' value='删除'></td>");
+			
+			//设置内容   过滤选择器
+			nametd.text($("input:eq(0)").val());
+			agetd.text($("input:eq(1)").val());
+			saltd.text($("input:eq(2)").val());
+			
+			//将td放入tr,tr放入table
+			tr.append(nametd);
+			tr.append(agetd);
+			tr.append(saltd);
+			tr.append(deltd);
+			$("table").append(tr);
+			
+			//操作下的删除
+			deltd.children().click(function(){
+				//tr.remove();
+				$(this).parent().parent().remove();
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>购物车</title>
+<style type="text/css">
+	table{
+		border: 1px solid black;
+		text-align: center;
+		margin:0 auto;
+		border-collapse: collapse;
+	}
+	th,td{
+		border: 1px solid black;
+	}
+	
+</style>
+</head>
+<body>
+	<table>
+		<caption><b>特价商品</b></caption>
+		<tr>
+			<th>商品名称</th>		
+			<th>商品单价</th>		
+			<th>商品库存</th>		
+			<th>操作</th>		
+		</tr>
+		<tr>
+			<td>华为手机</td>
+			<td>5000</td>
+			<td>100</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+		<tr>
+			<td>苹果手机</td>
+			<td>8000</td>
+			<td>500</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+		<tr>
+			<td>iPad</td>
+			<td>6000</td>
+			<td>1200</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+		<tr>
+			<td>篮球</td>
+			<td>150</td>
+			<td>200</td>
+			<td><input type="button" value="添加"></td>
+		</tr>
+	</table>
+	
+	<table>
+		<caption>购物车</caption>
+		<tr>
+			<th>商品名称</th>
+			<th>商品单价</th>
+			<th>商品数量</th>
+			<th>商品金额</th>
+			<th>操作</th>
+		</tr>
+		<tr>
+			<td>总价:</td>
+			<td colspan="4">0元</td>
+		</tr>
+	</table>
+	
+	<script type="text/javascript" src="../js/jquery-1.4.2.js"></script>
+	<script type="text/javascript">
+	$("input").click(function(){
+		//创建tr,td
+		var tr=$("<tr></tr>");
+		var nametd=$("<td></td>");
+		var pricetd=$("<td></td>");
+		var numtd=$("<td><input type='button' value='-' onclick='numfn(-1)'><span>1</span><input type='button' value='+' onclick='numfn(1)'></td>");
+		var moneytd=$("<td></td>");
+		var deltd=$("<td><input type='button' value='删除'></td>");
+		
+		//设置内容
+		var name=$(this).parent().siblings().eq(0).text();
+		var price=$(this).parent().siblings().eq(1).text();
+		//alert(name+"  "+price);  输出验证是否获取到对应的值
+		nametd.text(name);
+		pricetd.text(price);
+		moneytd.text(price);
+		
+		//将td放入到tr,tr放入到第二个tablel的最后一个tr前
+		tr.append(nametd);
+		tr.append(pricetd);
+		tr.append(numtd);
+		tr.append(moneytd);
+		tr.append(deltd);
+		$("tr:last").before(tr);
+		calfn();//计算总价的方法 
+		
+		//删除购物车中的一条记录
+		deltd.children().click(function(){
+			tr.remove();
+			calfn();
+		});
+	});
+		
+		//增减数量的方法
+	function numfn(x){
+			//获取事件源,这里不是动态绑定事件,只能用另一种方式获取
+			var obj=event.target||event.srcElement;
+			//得到span中原来的数值
+			var num=parseInt($(obj).siblings("span").text());//转为整数 
+			//alert(num);
+			num+=x;//计算数量
+			$(obj).siblings("span").text(num);//修改数量 
+			if(num==0){//控制数量 
+				$(obj).parent().parent().remove();
+			}	
+			
+			
+			//获取商品的单价计算商品金额
+			var price=$(obj).parent().prev().text();
+			//alert(price);
+			$(obj).parent().next().text(price*num);
+			
+			//计算总价   
+			calfn();
+		}
+	
+			
+		//封装计算总价的方法
+		function calfn(){
+			var total=0;
+			//遍历得到购物车的每一行的商品金额累加即可
+			$("table:last tr").each(function(){//动态绑定事件
+				//得到每行对应的金额
+				var money=parseInt($(this).children().eq(3).text());
+				if(!isNaN(money)){
+					total+=money;
+				}
+			});
+			$("td:last").text(total+"元");
+		}
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--服务端的配置信息,有新业务,只需要在这里配置信息而不需要修改源代码  -->
+<servlets>
+	<servlet path="/myweb/reg" className="com.webserver.servlet.RegServlet" />
+	<servlet path="/myweb/login" className="com.webserver.servlet.LoginServlet" />
+</servlets>
