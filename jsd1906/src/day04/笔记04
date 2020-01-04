@@ -1,0 +1,95 @@
+数值交换:（新建变量，首尾相连）
+	int a=1;
+	int b=2;
+	int temp=a;
+			a=b;
+			b=temp;
+		
+		例如:手动输入a，b，c三个变量的数值，要求通过数值交换，把输入的数值从小到大排序放入a,b,c中，并输出
+		Scanner sc=new Scanner(System.in);
+		System.out.println("请输入三个数:");
+			double a=sc.nextDouble();
+			double b=sc.nextDouble();
+			double c=sc.nextDouble();
+			if (a>b) {
+				double d=a;
+				a=b;
+				b=d;
+			}
+			if (a>c) {
+				double d=a;
+				a=c;
+				c=d;
+			}
+			if (b>c) {
+				double d=b;
+				b=c;
+				c=d;
+			}
+		System.out.println("a="+a+"	"+"b="+b+"	"+"c="+c);
+		
+		
+多分支结构:
+	1)if--else--if(多重if)			
+				if(条件1){
+						代码1			//条件1为真时执行
+				}else if(条件2){		
+						代码2		    //条件1为假,且条件2为真时执行
+				}else{
+						代码3			 //条件1和2为假时执行
+				}
+		注意: 1.else if 数量不限
+				2.最后的else可以根据需要写或不写
+				3.多分支结构中只能运行其中一条代码块
+				4.判断条件从小到大或从大到小
+				
+				
+	2)switch结构			(运行效率高,使用更灵活)			
+				switch([整数表达式]){
+						case 1:
+									 语句1;   //当整数表达式的值为1时运行
+									 break;
+						case 2: 
+									语句2;	//当整数表达式的值为2时运行
+									break;
+						......
+						default:    (冒号)
+						break;
+				}
+				
+		整数表达式	:最终结果是整数的算式,通常情况下可能是变量
+		整数表达式只能是byte,short,char,int类型	JDk1.7之后支持String
+		
+			break关键字:终止switch代码的运行,继续运行switch之后的代码
+								如果不写break语句会出现穿透现象.
+								
+		3)多重if和switch结构的小结
+				多重if优点:		特别适合于一个值在一个范围的情况
+				switch优点:	使用灵活,结构简单  运行效率高,特别适合于等值判断时
+				
+				
+循环结构:
+			编写的代码可能执行多次
+	1)什么是循环
+		程序中反复执行的相同或相似代码的现象
+		1.1)循环的要素
+			循环次数(循环变量)
+			循环条件
+			循环操作
+			变量更新
+	2)while循环结构						立旗套路 int flag=0；
+				while(条件){
+						//条件为真时循环运行这里的代码
+				}
+			
+		技巧:只要求和, 定义一个sum=0;的变量
+		
+		编写代码:
+				int a=1;  int sum=0;
+				while(a<=循环次数){
+				    	代码块;
+				      a++;	//循环变量
+				}
+			
+			
+		

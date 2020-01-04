@@ -1,0 +1,106 @@
+/*张皓岚
+ * email：jtzhanghl@tedu.cn
+ * qq:386901323	
+ *微博：张皓岚老师
+ *
+ *学习方法：听----想----练
+ *1）反复练习（练）
+ *2）不断思考（想）
+ *
+ *初识java：
+ *1）什么是java？
+ * 		java是一门高级的计算机编程语言
+ * 	1.1计算机语言
+ * 			就是能够操纵或者控制计算机的专门语言
+ * 	1.2)高级语言
+ * 			早期的低级语言和计算机沟通只通过2个字符  0\1		
+ * 			高级语言只需要使用简单的英文符号和一般符号就可以和计算机沟通的语言
+ * 
+ *		1.3)编程
+ *				编写程序
+ * 		
+ * 	使用eclipse开发程序：
+ * 	1）打开eclipse
+ * 	2）点击右上角（open Perspective）切换到java环境，默认是javaE环境
+ * 	3）创建java项、包
+ * 	4）新建java文件
+ * 5)在main方法中编写System.out.prinln("123");输出123
+ * 
+ * 	调字体：
+ * 1）Windows====preferences===搜索框（font）====Basic===text-font
+ * 
+ * 
+ * 
+ * java的安装：
+ * 	1）java的下载
+ * 		开发java需要下载jdk
+ * 		下载渠道：官网/达内内网：http://doc.tedu.cn
+ * 2)将下载的JDK1.8压缩包解压后安装即可
+ * 3）java安装的验证
+ * 		C：program Files \ Java(默认路径)
+ * 		打开存在jdk和jre文件夹即可
+ * 
+ * 
+ * 安装完成Java后配置环境变量：
+ * 		1）什么是环境变量
+ * 			就是当前操作系统支持的命令集
+ * 		2）为什么要配置环境变量
+ * 			想在当前操作系统中运行java程序   让jdk的开发命令加入到当前操作系统的可运行命令集
+ * 		3）配置环境变量步骤：
+ * 			【1】计算机---属性---环境变量
+ * 			【2】在窗口中的		“系统变量”		中配置 三个变量 
+ * 					2.1确定jdk安装路径
+ * 						新建：  
+ * 								变量名：JAVA_HOME
+ * 								变量值：就是jdk的路径
+ * 					2.2定位java文件生成的class文件的位置
+ * 						新建
+ * 								变量名：CLASSPATH
+ * 								变量值：.(一个点)
+ * 					2.3将java命令添加到Windows系统的命令值
+ * 						编辑
+ * 						变量名：Path
+ * 						变量值：在已有路径的前方加上  jdk路径\bin;  (注意有个分号)
+ * 		4）验证环境变量的配置
+ * 			win+R  输入cmd	
+ * 			输入代码：java -version 	出现"不是内部命令"则没有配置好，否则成功
+ 
+ 			java -version可以检查jdk的版本
+ 			检查java运行环境直接输入java
+ * 
+ * 
+ * eclipse====多种IDE工具的一种
+ * 1）什么是eclipse（日食）？
+ * 		eclipse是最早由IBM公司开发的一款专门编写java代码的软件（IDE工具）
+ * 2）为什么使用它？
+ * 		2.1集成了许多开发java需要用到的各种工具，简化java开发，提高效率
+ * 		2.2功能强大，开源免费
+ * 3）eclipse安装
+ * 		官网/达内内网
+ * 
+ * 
+ * java程序运行步骤：
+ * 1）编写		编写代码		生成.java文件
+ * 2）编译 	 jdk中编译器将编写的java文件编译成字节码文件.class，即翻译成机器语言，保存在bin目录下
+ * 3）运行		运行时是编译后的.class文件
+ * 					JVM是java虚拟机，执行class文件，是运行java程序的最终单位
+ * 
+ * 
+ * java家族结构：（面试或者考试）
+ * 		1）JVM：java虚拟机（小）
+ * 				用于运行class文件，运行java程序
+ * 		2）JRE：java运行环境（中） 
+ * 				JVM+Java的系统类库（辅助零件）
+ * 				JRE是java程序运行的最小单元
+ * 		3）JDK：java开发工具包（大）
+ * 					JRE+java开发命令
+ 
+ 
+ 常见异常：
+ InputMisMatchException			输入类型不匹配
+ ArraysIndexOutOfException		数组下标越界
+ NegativeArraySizeException		数组有负数
+ NullPointerException			空指针异常
+ NumberFormatException			数字格式化异常
+ StackOverFlowErro				方法来回调用产生异常
+ NotSerializableException		对象流中writeObject()方法没有实现Serializable接口
